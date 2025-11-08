@@ -124,6 +124,23 @@ npm run build
 
 To export the blog as static files for deployment to any web server (like Nginx):
 
+#### 一键部署脚本 / One-Click Deployment Script
+
+我们提供了便捷的部署脚本：
+
+We provide convenient deployment scripts:
+
+**快速部署 / Quick Deploy:**
+```bash
+# 一键构建并部署到 GitHub Pages
+./build-and-deploy.sh
+
+# 或者只部署已构建的文件
+./deploy.sh
+```
+
+**手动部署 / Manual Deploy:**
+
 1. **配置静态导出 / Configure Static Export**
 
    在 `next.config.js` 中添加或修改以下配置：
