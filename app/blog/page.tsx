@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getAllPosts, getAllTags, getAllCategories } from '@/lib/posts'
+import { createCategoryLink, createTagLink } from '@/lib/url-helpers'
 import { format } from 'date-fns'
 
 export default function BlogPage() {
@@ -27,7 +28,7 @@ export default function BlogPage() {
                   return (
                     <Link
                       key={category}
-                      href={`/category/${encodeURIComponent(category)}`}
+                      href={createCategoryLink(category)}
                       className="block text-blue-300 hover:text-blue-200 transition-colors duration-200 text-sm"
                     >
                       <span className="text-white/90">{category}</span>
@@ -46,7 +47,7 @@ export default function BlogPage() {
                   return (
                     <Link
                       key={tag}
-                      href={`/tag/${encodeURIComponent(tag)}`}
+                      href={createTagLink(tag)}
                       className="inline-block glass px-3 py-1 rounded-full text-sm text-white hover:bg-white/30 transition-all duration-200"
                     >
                       {tag}
@@ -79,7 +80,7 @@ export default function BlogPage() {
                     <>
                       <span>•</span>
                       <Link
-                        href={`/category/${encodeURIComponent(post.category)}`}
+                        href={createCategoryLink(post.category)}
                         className="text-blue-300 hover:text-blue-200 transition-colors duration-200"
                       >
                         {post.category}
@@ -99,7 +100,7 @@ export default function BlogPage() {
                     {post.tags.map(tag => (
                       <Link
                         key={tag}
-                        href={`/tag/${encodeURIComponent(tag)}`}
+                        href={createTagLink(tag)}
                         className="inline-block glass px-3 py-1 rounded-full text-sm text-white hover:bg-white/30 transition-all duration-200"
                       >
                         {tag}

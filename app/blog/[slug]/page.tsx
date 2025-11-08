@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getPostBySlug, getAllPosts } from '@/lib/posts'
+import { createCategoryLink, createTagLink } from '@/lib/url-helpers'
 import { format } from 'date-fns'
 import type { Metadata } from 'next'
 
@@ -57,7 +58,7 @@ export default async function PostPage({ params }: PostPageProps) {
             <>
               <span>•</span>
               <Link
-                href={`/category/${post.category}`}
+                href={createCategoryLink(post.category)}
                 className="text-blue-300 hover:text-blue-200 transition-colors duration-200"
               >
                 {post.category}
@@ -71,7 +72,7 @@ export default async function PostPage({ params }: PostPageProps) {
             {post.tags.map(tag => (
               <Link
                 key={tag}
-                href={`/tag/${encodeURIComponent(tag)}`}
+                href={createTagLink(tag)}
                 className="inline-block glass px-3 py-1 rounded-full text-sm text-white hover:bg-white/30 transition-all duration-200"
               >
                 #{tag}
