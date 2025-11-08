@@ -1,5 +1,5 @@
 ---
-title: "大型应用程序的TypeScript最佳实践"
+title: "测试文章三"
 date: "2024-01-25"
 excerpt: "学习构建可维护和可扩展应用程序的基本TypeScript模式和实践。"
 tags: ["TypeScript", 测试标签2", "编程", "软件工程"]
