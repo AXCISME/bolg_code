@@ -5,15 +5,10 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // 基础路径配置 - 所有资源都指向 /blog 子路径
+  // 设置基础路径为 /blog
   basePath: '/blog',
-  assetPrefix: '/blog',
-
-  // 确保所有静态资源路径正确
-  generateEtags: false,
-
-  // 导出配置
-  distDir: 'out',
+  // 设置资源路径前缀
+  assetPrefix: '/blog'
 }
 
 module.exports = nextConfig
